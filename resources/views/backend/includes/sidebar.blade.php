@@ -18,6 +18,16 @@
                 :text="__('Dashboard')" />
         </li>
 
+        <li class="c-sidebar-nav-item">
+            <x-utils.link
+                class="c-sidebar-nav-link"
+                :href="route('admin.presupuesto')"
+                :active="activeClass(Route::is('admin.presupuesto'), 'c-active')"
+                icon="c-sidebar-nav-icon cil-speedometer"
+                :text="__('Presupuesto')" />
+        </li>
+
+
         @if (
             $logged_in_user->hasAllAccess() ||
             (

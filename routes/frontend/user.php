@@ -19,6 +19,14 @@ Route::group(['as' => 'user.', 'middleware' => ['auth', 'password.expires', conf
                 ->push(__('Dashboard'), route('frontend.user.dashboard'));
         });
 
+    Route::get('presupuesto', function () {
+        return view('frontend.user.presupuesto');
+    })->name('presupuesto')
+        ->breadcrumbs(function (Trail $trail) {
+            $trail->parent('frontend.user.dashboard')
+                ->push(__('Presupuesto'), route('frontend.user.presupuesto'));
+        });
+
     Route::get('account', [AccountController::class, 'index'])
         ->name('account')
         ->breadcrumbs(function (Trail $trail) {
