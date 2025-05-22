@@ -156,7 +156,7 @@ return [
             // 'de' => ['name' => 'German', 'rtl' => false],
             // 'el' => ['name' => 'Greek', 'rtl' => false],
             'en' => ['name' => 'English', 'rtl' => false],
-            'es' => ['name' => 'Spanish', 'rtl' => false],
+            'es' => ['name' => 'Español', 'rtl' => false],
             // 'fa' => ['name' => 'Persian', 'rtl' => true],
             'fr' => ['name' => 'French', 'rtl' => false],
             // 'he' => ['name' => 'Hebrew', 'rtl' => true],
