@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Logging Configuration
@@ -50,7 +49,6 @@ return [
     */
 
     'services' => [
-
         'maxmind_database' => [
             'class' => \Torann\GeoIP\Services\MaxMindDatabase::class,
             'database_path' => storage_path('app/geoip.mmdb'),
@@ -93,7 +91,6 @@ return [
             'secure' => true,
             'locales' => ['en'],
         ],
-
     ],
 
     /*
@@ -148,18 +145,17 @@ return [
 
     'default_location' => [
         'ip' => '127.0.0.0',
-        'iso_code' => 'US',
-        'country' => 'United States',
-        'city' => 'New Haven',
-        'state' => 'CT',
-        'state_name' => 'Connecticut',
-        'postal_code' => '06510',
-        'lat' => 41.31,
-        'lon' => -72.92,
-        'timezone' => 'America/New_York',
-        'continent' => 'NA',
+        'iso_code' => 'CO',
+        'country' => 'Colombia',
+        'city' => 'Bogotá',
+        'state' => 'DC',
+        'state_name' => 'Bogotá D.C.',
+        'postal_code' => '110111',
+        'lat' => 4.711,
+        'lon' => -74.0721,
+        'timezone' => 'America/Bogota',
+        'continent' => 'SA',
         'default' => true,
-        'currency' => 'USD',
+        'currency' => 'COP',
     ],
-
 ];

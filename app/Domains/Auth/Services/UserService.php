@@ -150,6 +150,7 @@ class UserService extends BaseService
      * @param  array  $data
      * @return User
      *
+     * @throws GeneralException
      * @throws \Throwable
      */
     public function update(User $user, array $data = []): User
@@ -200,7 +201,8 @@ class UserService extends BaseService
             session()->flash('resent', true);
         }
 
-        return tap($user)->save();
+        $user->save();
+        return $user;
     }
 
     /**
@@ -226,8 +228,8 @@ class UserService extends BaseService
         }
 
         $user->password = $data['password'];
-
-        return tap($user)->update();
+        $user->update();
+        return $user;
     }
 
     /**
@@ -319,6 +321,12 @@ class UserService extends BaseService
      */
     protected function createUser(array $data = []): User
     {
+        // Establecer la zona horaria por defecto si no se proporciona
+        $timezone = $data['timezone'] ?? 'America/Bogota';
+        // Forzar Carbon a usar la zona horaria de Colombia para las fechas
+        $createdAt = now('America/Bogota');
+        $updatedAt = now('America/Bogota');
+
         return $this->model::create([
             'type' => $data['type'] ?? $this->model::TYPE_USER,
             'name' => $data['name'] ?? null,
@@ -328,6 +336,9 @@ class UserService extends BaseService
             'provider_id' => $data['provider_id'] ?? null,
             'email_verified_at' => $data['email_verified_at'] ?? null,
             'active' => $data['active'] ?? true,
+            'timezone' => $timezone,
+            'created_at' => $createdAt,
+            'updated_at' => $updatedAt,
         ]);
     }
 }

@@ -50,3 +50,23 @@ if (! function_exists('homeRoute')) {
         return 'frontend.index';
     }
 }
+
+if (! function_exists('displayDate')) {
+    /**
+     * Muestra la fecha en el idioma de la app usando Carbon (sin strftime).
+     *
+     * @param $date
+     * @param string|null $format
+     * @return string
+     */
+    function displayDate($date, $format = null)
+    {
+        if (!$date) return '';
+        $carbon = $date instanceof \Carbon\Carbon ? $date : new \Carbon\Carbon($date);
+        $locale = app()->getLocale() ?? 'es';
+        $carbon->locale($locale);
+        // Formato tipo: lunes, 26 de mayo de 2025, 11:31 AM
+        $format = $format ?: 'l, d \d\e F \d\e Y, h:i A';
+        return ucfirst($carbon->translatedFormat($format));
+    }
+}
