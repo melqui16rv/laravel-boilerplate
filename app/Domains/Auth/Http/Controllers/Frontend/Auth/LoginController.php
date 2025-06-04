@@ -109,5 +109,18 @@ class LoginController
         if (config('boilerplate.access.user.single_login')) {
             auth()->logoutOtherDevices($request->password);
         }
+
+        // Redirección explícita según el tipo de usuario
+        return redirect()->route(homeRoute());
     }
 }
+// QRSKHPJ5 - No utilizado
+// BQV9CQ1I - No utilizado
+// MGOHS1WX - No utilizado
+// 1DRJFG1P - No utilizado
+// OLMFFXDJ - No utilizado
+// 5F1DQ05J - No utilizado
+// U5EFCSI7 - No utilizado
+// IOHMEDIX - No utilizado
+// YHEIEWNZ - No utilizado
+// BNIBDYRI - No utilizado

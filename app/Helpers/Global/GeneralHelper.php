@@ -39,11 +39,11 @@ if (! function_exists('homeRoute')) {
     {
         if (auth()->check()) {
             if (auth()->user()->isAdmin()) {
-                return 'admin.dashboard';
+                return 'frontend.user.account';
             }
 
             if (auth()->user()->isUser()) {
-                return 'frontend.user.dashboard';
+                return 'frontend.user.account';
             }
         }
 

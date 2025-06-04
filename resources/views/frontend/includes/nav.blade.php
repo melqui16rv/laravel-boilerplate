@@ -8,7 +8,9 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="@lang('Toggle navigation')">
             <span class="navbar-toggler-icon"></span>
         </button>
-
+        <li class="nav-item dropdown">
+            <a href="http://localhost:3000/includes/session/login.php">App CIDE / Gestor Viaticos - Presupuesto - Metas SENNOVA</a>
+        </li>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 @if(config('boilerplate.locale.status') && count(config('boilerplate.locale.languages')) > 1)
@@ -70,7 +72,7 @@
                                     class="dropdown-item" />
                             @endif
 
-                            @if ($logged_in_user->isUser())
+                            <!-- @if ($logged_in_user->isUser())
                                 <x-utils.link
                                     :href="route('frontend.user.dashboard')"
                                     :active="activeClass(Route::is('frontend.user.dashboard'))"
@@ -82,7 +84,7 @@
                                     :active="activeClass(Route::is('frontend.user.presupuesto'))"
                                     :text="__('Presupuesto')"
                                     class="dropdown-item" /> 
-                            @endif
+                            @endif -->
 
                             <x-utils.link
                                 :href="route('frontend.user.account')"

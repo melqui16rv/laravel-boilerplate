@@ -342,3 +342,33 @@ class UserService extends BaseService
         ]);
     }
 }
+
+// base de datos viaticos
+// Número de documento:
+// Tipo de documento
+// Nombres:
+// Apellidos:
+// Correo:
+// Telefono:
+// Contraseña
+// id_rol:
+
+// base de datos gestor de cuenta
+// name
+// email
+// password
+
+
+//campos a unir
+// Numero de documento: Número de documento
+// Tipo documento: Tipo de documento
+// Nombre: nombres y apellidos + name
+// Contraseña: Contraseña + password
+// Correo: Correo + email
+// Telefono: Telefono
+// rol: id_rol
+
+//llaves foraneas de gestor de cuenta a viaticos
+// Nombre: nombres y apellidos + name
+// Correo: Correo + email
+// Contraseña: Contraseña + password
