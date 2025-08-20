@@ -327,7 +327,7 @@ class UserService extends BaseService
         $createdAt = now('America/Bogota');
         $updatedAt = now('America/Bogota');
 
-        return $this->model::create([
+        return new User($this->model::create([
             'type' => $data['type'] ?? $this->model::TYPE_USER,
             'name' => $data['name'] ?? null,
             'email' => $data['email'] ?? null,
@@ -339,7 +339,7 @@ class UserService extends BaseService
             'timezone' => $timezone,
             'created_at' => $createdAt,
             'updated_at' => $updatedAt,
-        ]);
+        ])->getAttributes());
     }
 }
 
